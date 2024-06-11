@@ -1,25 +1,21 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import {BrowserRouter, Route} from "react-router-dom"
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Header from "./components/Header";
 import BlogPost from "./components/BlogPost";
-import {ToastContainer} from "react-toastify"
+import Login from "./components/Login";
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
         <Header/>
-        <ToastContainer/>
-        <Routes>
-          <Route path="/" component={<Home/>}/>
-          <Route path="/profile" component={<Profile/>}/>
-          <Route path="/blog-post" component={<BlogPost/>}/>
-          <Route path="/dashboard" component={<Dashboard/>}/>
-        </Routes>
-      </div>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/profile" component={Profile}/>
+          <Route exact path="/blog-post" component={BlogPost}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
+          <Route exact path="/login" component={Login}/>
     </BrowserRouter>
   );
 }
